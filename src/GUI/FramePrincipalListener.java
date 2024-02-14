@@ -31,7 +31,10 @@ public class FramePrincipalListener implements ActionListener{
         }
         
         if(obj == frm.getBtnRegistrarVehiculo()){
-        
+            InternalFrameVehiculo frameVehiculo = new InternalFrameVehiculo("Registro Vehicular");
+            frameVehiculo.setVisible(true);
+            frm.getDesktopPane().add(frameVehiculo);
+            System.out.println("funciona");
         
         }
         
