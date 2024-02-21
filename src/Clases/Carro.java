@@ -9,5 +9,9 @@ package Clases;
  * @author Matox
  */
 public class Carro {
+    private String matricula;
+    
+    
+    
     
 }
