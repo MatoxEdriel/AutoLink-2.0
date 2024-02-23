@@ -72,6 +72,11 @@ public class InternalFrameVehiculo extends JInternalFrame {
     }
 
     public void addListener() {
+        InternalFrameVehiculoListener listener = new InternalFrameVehiculoListener(this);
+        
+        
+        
+        
 
     }
 
@@ -291,4 +296,54 @@ public class InternalFrameVehiculo extends JInternalFrame {
 
     }
 
+    public JTextField getTxtNumeroUsuario() {
+        return txtNumeroUsuario;
+    }
+
+    public JTextField getTxtNumeroChasis() {
+        return txtNumeroChasis;
+    }
+
+    public JTextField getTxtMatricula() {
+        return txtMatricula;
+    }
+
+    public JTextField getTxtMarca() {
+        return txtMarca;
+    }
+
+    public JTextField getTxtModelo() {
+        return txtModelo;
+    }
+
+    public JTextField getTxtNumeroAsiento() {
+        return txtNumeroAsiento;
+    }
+
+    public JTextField getTxtNumeroPuertas() {
+        return txtNumeroPuertas;
+    }
+
+    public JTextField getTxtTipoCambio() {
+        return txtTipoCambio;
+    }
+
+    public JTextField getTxtCilindraje() {
+        return txtCilindraje;
+    }
+
+    public JComboBox<TipoMoto> getCmbTipoMoto() {
+        return cmbTipoMoto;
+    }
+
+    public JButton getBtnCrearCarro() {
+        return btnCrearCarro;
+    }
+
+    public JButton getBtnCrearMoto() {
+        return btnCrearMoto;
+    }
+
+    
+    
 }

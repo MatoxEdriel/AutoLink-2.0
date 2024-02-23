@@ -26,6 +26,22 @@ public abstract class Vehiculo {
         return "Vehiculo{" + "numeroChasis=" + numeroChasis + ", matricula=" + matricula + ", marca=" + marca +
                 ", modelo=" + modelo + '}';
     }
+
+    public String getNumeroChasis() {
+        return numeroChasis;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
     
     
     
