@@ -22,6 +22,7 @@ public class InternalFrameVehiculoListener implements ActionListener {
 
     InternalFrameVehiculo frm;
     List<Vehiculo> lstVehiculo;
+    List<Cliente> lstCliente;
 
     public InternalFrameVehiculoListener(InternalFrameVehiculo frm) {
         this.frm = frm;
@@ -52,15 +53,14 @@ public class InternalFrameVehiculoListener implements ActionListener {
             String matricula = frm.getTxtMatricula().getText();
             String marca = frm.getTxtMarca().getText();
             String modelo = frm.getTxtModelo().getText();
-            
+
             double cilindraje = Double.parseDouble(frm.getTxtCilindraje().getText());
             TipoMoto tipoMoto = (TipoMoto) frm.getCmbTipoMoto().getSelectedItem();
-            
+
             Moto moto = new Moto(cilindraje, tipoMoto, numeroChasis, matricula, marca, modelo);
-            
+
             addVehiculo(moto);
-            
-            
+
         }
 
     }
@@ -75,5 +75,19 @@ public class InternalFrameVehiculoListener implements ActionListener {
         }
 
     }
+
+    
+    public Cliente obtenerCedulaCliente(String numeroCedula) {
+        if (lstCliente != null && !lstCliente.isEmpty()) {
+            for (Cliente cliente : lstCliente) {
+                if (cliente.getCedula().equals(numeroCedula)) {
+                    return cliente;
+                }
+            }
+        }
+        return null;
+    }
+    
+    
 
 }

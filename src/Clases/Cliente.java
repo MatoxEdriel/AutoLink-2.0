@@ -5,6 +5,7 @@
 package Clases;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -30,19 +31,23 @@ public class Cliente {
         this.direccionDomicilio = direccionDomicilio;
         //Pensar Aqui 
         generarCodigo();
-        
-        
-        
+
     }
 
-
-    
-    
-    
-    public void generarCodigo() {
-
-        //Code
-        this.codigo = codigo;
+    private void generarCodigo() {
+        Random numeroRandom = new Random();
+        int numero = numeroRandom.nextInt(901) + 100;
+        char[] cedulaVector = this.cedula.toCharArray();
+        char[] nombreVector = this.nombre.toCharArray();
+        char[] apellidoVector = this.apellido.toCharArray();
+        char primerDigito = cedulaVector[8];
+        char segundoDigito = cedulaVector[9];
+        char primerLetra = nombreVector[0];
+        char segundaLetra = nombreVector[1];
+        char ultimaLetra = apellidoVector[apellidoVector.length - 1];
+        char penultimaLetra = apellidoVector[apellidoVector.length - 2];
+        String codepart1 = " " + primerDigito + segundoDigito + primerLetra + segundaLetra + penultimaLetra + ultimaLetra + numero;
+        this.codigo = codepart1;
     }
 
     public String getCodigo() {

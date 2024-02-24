@@ -51,6 +51,8 @@ public class InternalFrameVehiculo extends JInternalFrame {
     private JTextField txtNumeroAsiento;
     private JTextField txtNumeroPuertas;
     private JTextField txtTipoCambio;
+    
+     private JTextField txtNumeroMatricula;
 
     private JTextField txtCilindraje;
     private JComboBox<TipoMoto> cmbTipoMoto;
@@ -120,21 +122,35 @@ public class InternalFrameVehiculo extends JInternalFrame {
         
          */
         pnlRegistroVehiculo = new JPanel(new GridLayout(5, 1));
-        pnlNumeroUsuario = new JPanel(new GridLayout(2, 2));
-        JPanel pnlNumeroUsuario2 = new JPanel(new GridLayout(5, 1));
+        
+        pnlNumeroUsuario = new JPanel(new GridLayout(2,1));
+        Border bordeRedondeado = new JTextFieldRoundBorder(10);
+        JPanel pnlMatriculaAsignar = new JPanel();
+        JLabel lblNumeroMatricula = new JLabel("Numero de matricula: ");
+        txtNumeroMatricula = new JTextField(10);
+        pnlMatriculaAsignar.add(lblNumeroMatricula);
+        pnlMatriculaAsignar.add(txtNumeroMatricula);
+        txtNumeroMatricula.setBorder(bordeRedondeado);
+        
+  
+        
+        pnlNumeroUsuario.add(pnlMatriculaAsignar);
+        
+        //AQUI 
+        JPanel pnlNumeroUsuario2 = new JPanel();
         pnlInformacion = new JPanel(new BorderLayout());
 
-        Border bordeRedondeado = new JTextFieldRoundBorder(10);
+     
 
         /*
            IconoUsuario = new ImageIcon("src/IMG/usuario2.jpg");
         lblIconoUsuario = new JLabel(IconoUsuario);
          */
-        iconoUsuario = new ImageIcon("src/IMG/usuario2.jpg");
+        iconoUsuario = new ImageIcon("src/IMG/usuario3.jpg");
         JLabel lblIconoUsuario = new JLabel(iconoUsuario);
         JLabel lblNumeroUsuario = new JLabel("Numero Usuario");
         txtNumeroUsuario = new JTextField(10);
-        pnlNumeroUsuario.add(lblIconoUsuario);
+        pnlNumeroUsuario2.add(lblIconoUsuario);
         pnlNumeroUsuario.setBackground(Color.WHITE);
         pnlNumeroUsuario2.setBackground(Color.WHITE);
 
@@ -143,8 +159,8 @@ public class InternalFrameVehiculo extends JInternalFrame {
         pnlNumeroUsuario.add(pnlNumeroUsuario2);
         txtNumeroUsuario.setBorder(bordeRedondeado);
         //USUARIO FIN 
-
-        pnlInformacion.add(pnlNumeroUsuario, BorderLayout.WEST);
+//AQUIII ESTA  
+        //pnlInformacion.add(pnlNumeroUsuario, BorderLayout.WEST);
 
         pnlInformacion.add(pnlRegistroVehiculo);
         contentPane.add(pnlInformacion, BorderLayout.NORTH);
@@ -214,7 +230,7 @@ public class InternalFrameVehiculo extends JInternalFrame {
         txtMarca.setBorder(bordeRedondeado);
         txtModelo.setBorder(bordeRedondeado);
         pnlVehiculos = new JPanel(new GridLayout(1, 2));
-        JPanel pnlCarro = new JPanel(new GridLayout(5, 1));
+        JPanel pnlCarro = new JPanel(new GridLayout(6, 1));
         JPanel pnlMoto = new JPanel(new GridLayout(5, 1));
         pnlVehiculos.add(pnlCarro);
         pnlVehiculos.add(pnlMoto);
@@ -253,8 +269,10 @@ public class InternalFrameVehiculo extends JInternalFrame {
 
         btnCrearCarro = new JButton("Registrar Carro");
         pnlBtnCarro.add(btnCrearCarro);
+//AQUI MODIFICACION 
 
         pnlCarro.add(pnlBtnCarro);
+        pnlCarro.add(pnlNumeroUsuario);
 
         //PNLMOTO 
         JLabel lblRegistrarMoto = new JLabel("Registrar Moto");

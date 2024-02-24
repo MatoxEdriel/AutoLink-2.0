@@ -37,6 +37,18 @@ public class Direccion {
     
     
     
+    @Override
+    public String toString() {
+        return "Direccion{" + "ciudad=" + ciudad + ", calle=" + calle + ", numeroCasa=" + numeroCasa + '}';
+    }
+
+    
+    
+    
+    
+    
+    
+    
     
     
     

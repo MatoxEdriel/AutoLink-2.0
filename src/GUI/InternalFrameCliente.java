@@ -72,6 +72,7 @@ public class InternalFrameCliente extends JInternalFrame {
     public void addListener() {
         InternalFrameClienteListener listener = new InternalFrameClienteListener(this);
         btnRegistrar.addActionListener(listener);
+        btnAsignarVehiculo.addActionListener(listener);
 
     }
 

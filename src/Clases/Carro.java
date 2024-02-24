@@ -19,10 +19,6 @@ public class Carro extends Vehiculo{
         this.numeroPuertas = numeroPuertas;
         this.tipoCambio = tipoCambio;
     }
-
-    
-    
-    
     
     
     
